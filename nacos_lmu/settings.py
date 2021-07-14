@@ -16,7 +16,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # Third party
+    'rest_framework',
+    'drf_spectacular',
+    # My apps
     'core.apps.CoreConfig',
 ]
 
@@ -95,3 +98,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+}
+
+# API DOCS SETTINGS
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'NACOS LMU',
+    'DESCRIPTION': 'Django Backend for nacos lmu website',
+    'VERSION': '1.0.0',
+    'SCHEMA_PATH_PREFIX': '/api',
+}
