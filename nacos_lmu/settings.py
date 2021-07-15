@@ -113,3 +113,6 @@ SPECTACULAR_SETTINGS = {
     'VERSION': '1.0.0',
     'SCHEMA_PATH_PREFIX': '/api',
 }
+
+MEDIA_ROOT = "media"
+MEDIA_URL = "/media/"
