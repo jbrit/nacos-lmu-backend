@@ -23,5 +23,4 @@ class PastQuestionList(generics.ListAPIView):
                 filters[query_param] = param_value
         
         queryset = queryset.filter( **filters)
-        print("filters",filters)
         return queryset
