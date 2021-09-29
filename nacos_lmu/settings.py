@@ -1,5 +1,8 @@
 import dj_database_url
 from pathlib import Path
+import dotenv
+
+dotenv.load_dotenv()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -99,6 +102,7 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
+STATIC_ROOT = 'static'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
